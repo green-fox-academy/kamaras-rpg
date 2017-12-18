@@ -6,30 +6,24 @@ class Map():
     def __init__(self):
         pass
 
+    def read(self):
+        temp = open('grid.txt', 'r')
+        grid = temp.readlines()
+        temp.close()
+        return grid
+
     def draw_tile(self, canvas):
         global floor1
         floor1 = Floor()
         global wall1
         wall1 = Wall()
-        grid = [
-            [0, 0, 1, 0, 0, 0, 1, 0, 0, 0],
-            [0, 0, 1, 1, 0, 1, 1, 0, 1, 0],
-            [1, 0, 0, 0, 0, 0, 1, 0, 1, 0],
-            [1, 0, 1, 1, 1, 0, 1, 0, 1, 0],
-            [1, 0, 0, 0, 0, 0, 0, 0, 1, 0],
-            [1, 1, 1, 0, 0, 0, 1, 0, 0, 0],
-            [1, 0, 0, 0, 0, 0, 1, 0, 0, 0],
-            [1, 0, 1, 0, 0, 0, 1, 0, 0, 0],
-            [1, 0, 1, 0, 0, 0, 1, 0, 0, 0],
-            [1, 0, 1, 0, 0, 0, 1, 0, 0, 0],
-        ]
-        for j in range(10):
-            line = grid[j]
-            for i in range(10):
-                if line[i] == 0:
-                    self.floor = canvas.create_image(floor1.tile_x + i * 72, floor1.tile_y + j * 72, image = floor1.image)
-                else:
-                    self.wall = canvas.create_image(wall1.tile_x + i * 72, wall1.tile_y + j * 72, image = wall1.image)
+        grid = self.read()
+        for j in range(len(grid)):
+            for i in range(len(grid[j])):
+                if grid[j][i] == '0':
+                    canvas.create_image(floor1.tile_x + i * 72, floor1.tile_y + j * 72, image = floor1.image)
+                elif grid[j][i] == '1':
+                    canvas.create_image(wall1.tile_x + i * 72, wall1.tile_y + j * 72, image = wall1.image)
 
 root = Tk()
 canvas = Canvas(root, width = 720, height = 720)
