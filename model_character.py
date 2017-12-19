@@ -9,12 +9,3 @@ class Character():
         self.hp = self.random_num
         self.dp = self.random_num
         self.sp = self.random_num
-    
-    # def random_multiplier(self):
-    #     self.rand = random.randint(1, 6)
-    #     return self.rand
-
-object = Character()
-print(object.hp)
-print(object.dp)
-print(object.sp)
