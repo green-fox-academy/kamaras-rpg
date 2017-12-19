@@ -1,3 +1,4 @@
+from tkinter import *
 from model_character import *
 
 class Monster(Character):
