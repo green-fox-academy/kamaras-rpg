@@ -8,7 +8,7 @@ canvas = Canvas(root, width = 720, height = 720)
 map = Map()
 map.draw_tile(canvas)
 
-my_hero = Hero(canvas)
+my_hero = Hero(canvas, map)
 
 canvas.bind('<KeyPress>', my_hero.move_by_keys)
 canvas.pack()
