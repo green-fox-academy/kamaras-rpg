@@ -25,10 +25,10 @@ class Map():
                 elif grid[j][i] == '1':
                     canvas.create_image(wall1.tile_x + i * 72, wall1.tile_y + j * 72, image = wall1.image)
 
-root = Tk()
-canvas = Canvas(root, width = 720, height = 720)
-canvas.pack()
+# root = Tk()
+# canvas = Canvas(root, width = 720, height = 720)
+# canvas.pack()
 
-map = Map()
-map.draw_tile(canvas)
-root.mainloop()
+# map = Map()
+# map.draw_tile(canvas)
+# root.mainloop()
