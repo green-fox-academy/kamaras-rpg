@@ -8,7 +8,7 @@ canvas = Canvas(root, width = 720, height = 720)
 map = Map()
 map.draw_tile(canvas)
 
-my_hero = Hero(canvas, map)
+my_hero = Hero(canvas)
 
 def draw_hero():
     map.draw_tile(canvas)
