@@ -15,13 +15,13 @@ def draw_hero():
     canvas.create_image(my_hero.char_x, my_hero.char_y, image = my_hero.image)
 
 def move_by_keys(e):
-    if e.keycode == 38:
+    if e.keycode == 38 and my_hero.char_y > 38:
         my_hero.move_up()
-    elif e.keycode == 40:
+    elif e.keycode == 40 and my_hero.char_y < 682 :
         my_hero.move_down()
-    elif e.keycode == 39:
+    elif e.keycode == 39 and my_hero.char_x < 682:
         my_hero.move_right()
-    elif e.keycode == 37:
+    elif e.keycode == 37 and my_hero.char_x > 38:
         my_hero.move_left()
     draw_hero()
 
