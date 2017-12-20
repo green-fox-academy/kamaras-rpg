@@ -2,8 +2,10 @@ import random
 
 class Character():
 
+    main_random = random.randint(1, 6)
+
     def __init__(self, random_num = 0, char_x = 38, char_y = 38, hp = 0, dp = 0, sp = 0):
-        self.random_num = random.randint(1, 6)
+        self.random_num = self.main_random
         self.char_x = char_x
         self.char_y = char_y
         self.hp = self.random_num
