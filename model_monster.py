@@ -1,3 +1,4 @@
+import random
 from tkinter import *
 from model_character import *
 
@@ -10,6 +11,16 @@ class Monster(Character):
         self.dp = int((self.lvl_number / 2) * self.dp)
         self.sp = self.lvl_number * self.sp
         self.image = PhotoImage(file = 'skeleton.png')
+    
+    def move_monster(self):
+        if random.randint(1, 4) == 1 and self.char_y + 576 > 38:
+            self.char_y = self.char_y - 72
+        if random.randint(1, 4) == 2 and self.char_y + 576 < 610:
+            self.char_y = self.char_y + 72
+        if random.randint(1, 4) == 3 and self.char_x + 72 < 610:
+            self.char_x = self.char_x + 72
+        if random.randint(1, 4) == 4 and self.char_x + 72 > 38:
+            self.char_x = self.char_x - 72
 
 class Boss(Monster):
 
